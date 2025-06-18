@@ -44,22 +44,21 @@
   background-color: transparent;
   position: relative;
   bottom: -1px;
+  color: var(--tab-color);
+}
 
-  &::before,
-  &::after {
-    background-color: light-dark(
-      var(--mantine-color-gray-2),
-      var(--mantine-color-dark-7)
-    ) !important;
-  }
+.tab[data-active] {
+  color: var(--tab-active-color);
+  background-color: var(--tab-active-bg);
+  border-color: var(--tab-active-border);
+  border-bottom-color: transparent;
+}
 
-  &:hover {
-    background-color: light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-5));
-  }
 
-  &[data-active] {
-    background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
-    border-color: light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-7));
-    border-bottom-color: transparent;
-  }
+.mobileMenu {
+  display: flex;
+  flex-direction: column;
+  padding: var(--mantine-spacing-md);
+  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
+  border-top: 1px solid var(--mantine-color-gray-2);
 }
