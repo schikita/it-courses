@@ -1,0 +1,19 @@
+.icon {
+  transition: transform 0.3s ease;
+}
+
+.light {
+  display: block;
+}
+
+.dark {
+  display: none;
+}
+
+html[data-mantine-color-scheme='dark'] .light {
+  display: none;
+}
+
+html[data-mantine-color-scheme='dark'] .dark {
+  display: block;
+}
