@@ -45,7 +45,7 @@ export function UserMenu() {
   const isDark = colorScheme === 'dark';
   const [userMenuOpened, setUserMenuOpened] = useState(false);
 
-  if (!mounted) return null; // 💥 Ключевая защита от mismatch
+  if (!mounted) return null; 
 
   if (!isAuthenticated) {
     return (
@@ -53,7 +53,7 @@ export function UserMenu() {
         variant="outline"
         size="md"
         radius="md"
-        color={isDark ? 'gray' : 'blue'}
+        color={isDark ? 'gray' : '#00000054'}
         rightSection={<LogIn size={18} />}
         onClick={() => console.log('Открыть вход')}
       >

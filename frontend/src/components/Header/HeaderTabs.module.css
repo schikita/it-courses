@@ -1,8 +1,11 @@
 .header {
-  padding-top: var(--mantine-spacing-sm);
+  
+  position: relative;
+  z-index: 10;
   background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
-  border-bottom: 1px solid light-dark(var(--mantine-color-gray-2), transparent);
-  margin-bottom: 120px;
+  padding-top: var(--mantine-spacing-sm); 
+  
+  overflow: visible !important;
 }
 
 .mainSection {
@@ -51,14 +54,52 @@
   color: var(--tab-active-color);
   background-color: var(--tab-active-bg);
   border-color: var(--tab-active-border);
-  border-bottom-color: transparent;
+  /*border-bottom-color: transparent;*/
 }
 
 
-.mobileMenu {
+.fullscreenMenu {
+  width: 100vw;
+  height: 100vh;
+  background-color: #0f1128;
+  color: white;
   display: flex;
   flex-direction: column;
-  padding: var(--mantine-spacing-md);
-  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
-  border-top: 1px solid var(--mantine-color-gray-2);
+  justify-content: space-between;
+  padding: 0; 
+  box-sizing: border-box;
 }
+
+
+
+.navContainer {
+  margin-top: 40px;
+  padding-bottom: 10px; 
+  justify-content: center;
+  /*border-bottom: 1px solid var(--mantine-color-gray-3);*/
+}
+
+.burger {
+  display: none;
+}
+
+@media (max-width: 770px) {
+  .burger {
+    display: block !important;
+  }
+
+  .tabsRoot {
+    display: none !important;
+  }
+}
+
+.userMenu {
+  display: block;
+}
+
+@media (max-width: 500px) {
+  .userMenu {
+    display: none !important;
+  }
+}
+
