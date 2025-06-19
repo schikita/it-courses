@@ -23,7 +23,7 @@ export function AppFooter() {
         {/* Logo and Description */}
         <Box mb="xl">
           <Text size="xl" className="logo-footer" mb="md">
-            IT Academy
+            Codecraft
           </Text>
           <Text 
             className="footer-text" 
@@ -195,7 +195,7 @@ export function AppFooter() {
         <Container size="lg" py="md">
           <Group justify="space-between" wrap="wrap" gap="md">
             <Text className="copyright-text" size="sm">
-              © 2025 IT Academy. Все права защищены.
+              © 2025 Codecraft. Все права защищены.
             </Text>
             <Group gap="lg" wrap="wrap">
               <Anchor 
