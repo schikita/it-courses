@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-2p&e0cmqkc-6jw-a3=$7xp144pc2acjocvj(7f^o=vmzjfbk8-'
-
+AUTH_USER_MODEL = 'courses.User'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -78,7 +78,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'itcourses_db',
         'USER': 'postgres',             # или другой пользователь
-        'PASSWORD': '',         # обязательно корректный пароль
+        'PASSWORD': '1111',         # обязательно корректный пароль
         'HOST': 'localhost',
         'PORT': '5432',
     }
