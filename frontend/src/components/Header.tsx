@@ -121,7 +121,7 @@ export function AppHeader() {
               <Button
                 variant="subtle"
                 component={Link}
-                href="/login"
+                href="/auth"
                 className="header-button"
                 style={{
                   color: "#667eea",
