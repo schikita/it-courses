@@ -2,6 +2,7 @@ from rest_framework import viewsets, permissions, generics
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from .permissions import IsTeacher
 
 from .models import (
     Image, User, Course, Lesson, Enrollment, CourseImage
@@ -71,6 +72,17 @@ class CourseViewSet(viewsets.ModelViewSet):
         lessons = course.lessons.all()
         serializer = LessonSerializer(lessons, many=True)
         return Response(serializer.data)
+    
+    def complete(self, request, pk=None):
+        enrollment = self.get_object()
+        enrollment.is_completed = True
+        enrollment.save()
+        return Response({'status': 'Курс завершён'})
+    
+    def get_permissions(self):
+        if self.action in ['create', 'update', 'partial_update', 'destroy']:
+            return [IsTeacher()]
+        return [permissions.IsAuthenticatedOrReadOnly()]
 
 
 # -------------------- Lessons --------------------

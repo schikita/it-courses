@@ -75,8 +75,8 @@ class LessonSerializer(serializers.ModelSerializer):
 class EnrollmentSerializer(serializers.ModelSerializer):
     course = CourseSerializer(read_only=True)
     course_id = serializers.PrimaryKeyRelatedField(
-        queryset=Course.objects.all(), source='course', write_only=True
-    )
+        queryset=Course.objects.all(), source='course', write_only=True)
+    progress = serializers.FloatField(read_only=True)
 
     class Meta:
         model = Enrollment

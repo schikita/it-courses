@@ -5,6 +5,7 @@ from .views import (
     ImageViewSet, CourseViewSet, LessonViewSet,
     EnrollmentViewSet, CourseImageViewSet
 )
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 router = DefaultRouter()
 router.register(r'users', UserViewSet)
@@ -15,7 +16,9 @@ router.register(r'enrollments', EnrollmentViewSet)
 router.register(r'course-images', CourseImageViewSet)
 
 urlpatterns = [
-    path('api/', include(router.urls)),
-    path('api/users/me/', CurrentUserView.as_view(), name='current-user'),
-    path('api/register/', UserRegistrationView.as_view(), name='register'),
+    path('', include(router.urls)),
+    path('users/me/', CurrentUserView.as_view(), name='current-user'),
+    path('register/', UserRegistrationView.as_view(), name='register'),
+    path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
