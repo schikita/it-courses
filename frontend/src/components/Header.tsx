@@ -132,7 +132,7 @@ export function AppHeader() {
               </Button>
               <Button
                 component={Link}
-                href="/signup"
+                href="/auth"
                 className="header-button"
                 style={{
                   background:

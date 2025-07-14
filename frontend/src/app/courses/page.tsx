@@ -13,8 +13,10 @@ interface ImageItem {
 export default function CoursesPage() {
   const [image, setImage] = useState<ImageItem | null>(null);
 
+  const base_url = 'http://127.0.0.1:8000';
+
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/images/')
+    fetch(`${base_url}/api/images/`)
       .then((res) => res.json())
       .then((data: ImageItem[]) => {
         if (data.length > 0) setImage(data[0]);
